@@ -26,11 +26,8 @@
         }];
 
         jsonexport(contacts, { rowDelimiter: ',', forceTextDelimiter: true }, function(err, csv){
-            if(err) {
-                console.log(err);
-                return null;
-            }
-            return csv;
+            if(err) return console.log(err);
+			console.log(csv);
         });
     </script>
 </html>
