@@ -9,6 +9,7 @@
     "build:dist": "npm-run-all build:dist:js build:dist:overwrite",
     "build:dist:js": "babel lib --out-dir dist --presets=env",
     "build:dist:overwrite": "node ./bin/builddist.js",
+    "build:dist:browser-bundle": "browserify ./dist/index.js -o ./lib/jsonexport.bundle.js --standalone jsonexport",
     "deploy": "npm run build:dist && npm publish"
   },
   "pre-commit": [
@@ -49,6 +50,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "benchmark": "^2.1.4",
+    "browserify": "^17.0.0",
     "chai": "^4.1.2",
     "jshint": "^2.11.1",
     "mocha": "^7.1.2",
