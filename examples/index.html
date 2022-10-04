@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jsonexport.bundle.js"></script>
+</head>
+<body>
+    
+</body>
+    <script>
+        var contacts = [{
+            name: 'Bob',
+            lastname: 'Smith'
+        },{
+            name: 'James',
+            lastname: 'David'
+        },{
+            name: 'Robert',
+            lastname: 'Miller'
+        },{
+            name: 'David',
+            lastname: 'Martin'
+        }];
+
+        jsonexport(contacts, { rowDelimiter: ',', forceTextDelimiter: true }, function(err, csv){
+            if(err) {
+                console.log(err);
+                return null;
+            }
+            return csv;
+        });
+    </script>
+</html>
